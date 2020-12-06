@@ -1,6 +1,5 @@
 import { Container, Header, Content, Footer, Sidebar, Navbar, Nav, Icon, Sidenav, Dropdown } from 'rsuite';
 import React from "react";
-import ReactDOM from 'react-dom';
 import 'rsuite/dist/styles/rsuite-default.css';
 
 const headerStyles = {
