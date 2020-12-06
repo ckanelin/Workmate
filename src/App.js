@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Jerome from './Jerome';
 
 function App() {
   return (
