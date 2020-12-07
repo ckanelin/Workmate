@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import logo from './logo.svg';
 import './App.css';
-
+import React,{Component} from 'react';
 import SignIn from './Components/SignIn';
 import Register from './Components/Register';
 import DashBoard from './Components/Dashboard';
@@ -60,7 +60,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;
