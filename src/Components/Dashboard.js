@@ -4,6 +4,7 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import TopBar from "./NavBar.jsx";
 import CardTask from "./CardTask";
 import MatchCard from "./MatchCard";
+import ProfilePage from "./ProfilePage";
 
 const headerStyles = {
     padding: 18,
@@ -65,6 +66,7 @@ const headerStyles = {
       this.onClickTask = this.onClickTask.bind(this);
       this.onClickProfile = this.onClickProfile.bind(this);
       this.onClickMatches = this.onClickMatches.bind(this);
+      this.onClickDashBoard = this.onClickDashBoard(this);
     }
 
     handleToggle() {
@@ -83,6 +85,10 @@ const headerStyles = {
 
     onClickMatches(){
       this.setState({route: 'matches'})
+    }
+
+    onClickDashBoard(){
+      this.setState({route: 'dashboard'})
     }
 
     render() {
@@ -109,7 +115,7 @@ const headerStyles = {
               >
                 <Sidenav.Body>
                   <Nav>
-                    <Nav.Item eventKey="1" active icon={<Icon icon="dashboard" />}>
+                    <Nav.Item onClick={this.onClickDashBoard} eventKey="1" active icon={<Icon icon="dashboard" />}>
                       Dashboard
                     </Nav.Item>
                     <Nav.Item onClick={this.onClickProfile} eventKey="2" icon={<Icon icon="profile" />}>
@@ -154,6 +160,10 @@ const headerStyles = {
                   route === 'matches' ?
                   <MatchCard/>:
 
+                  route === 'profile' ?
+                  <ProfilePage/>:
+
+                  route === 'dashboard' ?
                   <div className="flex flex-column ">
                     <div>
                       <h1>Interaction Analytics</h1>
@@ -162,7 +172,10 @@ const headerStyles = {
                       <img style={{ maxWidth: '100%', maxHeight: '100%' }}
                       src="https://www.visme.co/wp-content/themes/visme/images/graph-maker-header-5.jpg"/>
                     </div>
-                  </div>
+                  </div>:
+
+                  <div></div>
+
                 }
               </Content>
             </Container>
