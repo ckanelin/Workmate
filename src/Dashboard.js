@@ -1,6 +1,7 @@
 import { Container, Header, Content, Footer, Sidebar, Navbar, Nav, Icon, Sidenav, Dropdown } from 'rsuite';
 import React from "react";
 import 'rsuite/dist/styles/rsuite-default.css';
+import TopBar from "./NavBar.jsx";
 
 const headerStyles = {
     padding: 18,
@@ -73,7 +74,7 @@ const headerStyles = {
               <Sidenav.Header>
                 <div style={headerStyles}>
                   <Icon icon="logo-analytics" size="lg" style={{ verticalAlign: 0 }} />
-                  <span style={{ marginLeft: 12 }}> BRAND</span>
+                  <span style={{ marginLeft: 12 }}> WORKMATE</span>
                 </div>
               </Sidenav.Header>
               <Sidenav
@@ -86,22 +87,18 @@ const headerStyles = {
                     <Nav.Item eventKey="1" active icon={<Icon icon="dashboard" />}>
                       Dashboard
                     </Nav.Item>
-                    <Nav.Item eventKey="2" icon={<Icon icon="group" />}>
-                      User Group
+                    <Nav.Item eventKey="2" icon={<Icon icon="profile" />}>
+                      Profile
                     </Nav.Item>
-                    <Dropdown
-                      eventKey="3"
-                      trigger="hover"
-                      title="Advanced"
-                      icon={<Icon icon="magic" />}
-                      placement="rightStart"
-                    >
-                      <Dropdown.Item eventKey="3-1">Geo</Dropdown.Item>
-                      <Dropdown.Item eventKey="3-2">Devices</Dropdown.Item>
-                      <Dropdown.Item eventKey="3-3">Brand</Dropdown.Item>
-                      <Dropdown.Item eventKey="3-4">Loyalty</Dropdown.Item>
-                      <Dropdown.Item eventKey="3-5">Visit Depth</Dropdown.Item>
-                    </Dropdown>
+                    <Nav.Item eventKey="3" icon={<Icon icon="tasks" />}>
+                      Tasks
+                    </Nav.Item>
+                    <Nav.Item eventKey="4" icon={<Icon icon="peoples" />}>
+                      Matches
+                    </Nav.Item>
+                    <Nav.Item eventKey="2" icon={<Icon icon="inbox" />}>
+                      Feedback
+                    </Nav.Item>
                     <Dropdown
                       eventKey="4"
                       trigger="hover"
@@ -109,11 +106,8 @@ const headerStyles = {
                       icon={<Icon icon="gear-circle" />}
                       placement="rightStart"
                     >
-                      <Dropdown.Item eventKey="4-1">Applications</Dropdown.Item>
-                      <Dropdown.Item eventKey="4-2">Websites</Dropdown.Item>
-                      <Dropdown.Item eventKey="4-3">Channels</Dropdown.Item>
-                      <Dropdown.Item eventKey="4-4">Tags</Dropdown.Item>
-                      <Dropdown.Item eventKey="4-5">Versions</Dropdown.Item>
+                      <Dropdown.Item eventKey="4-1">Notifications</Dropdown.Item>
+                      <Dropdown.Item eventKey="4-2">Other settings</Dropdown.Item>
                     </Dropdown>
                   </Nav>
                 </Sidenav.Body>
@@ -123,7 +117,9 @@ const headerStyles = {
   
             <Container>
               <Header>
-                <h2>Page Title</h2>
+                <div>
+                    <TopBar/>
+                </div>
               </Header>
               <Content>Content</Content>
             </Container>
@@ -133,5 +129,4 @@ const headerStyles = {
     }
   }
   
-//   ReactDOM.render(<Page/>);
   export default DashBoard;
