@@ -1,15 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
-import CardTask from "./TaskCard.js";
-
-function App() {
-  return (
-      <header className="App-header">
-        <CardTask/>
-      </header>
-  );
-=======
 
 import SignIn from './Components/SignIn';
 import Register from './Components/Register';
@@ -70,8 +60,6 @@ class App extends Component {
       </div>
     );
   }
-
->>>>>>> upstream/master
 }
 
 export default App;
