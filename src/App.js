@@ -40,7 +40,8 @@ class App extends Component {
           </div>:
 
           <div className="flex">
-            <div className="w-50 vh-100 bg-light-blue">
+            <div className="w-50 vh-100 bg-light-blue justify-center item-center">
+              Workmate
             </div>
 
             <div className="w-50 vh-100 flex flex-column justify-center items-center">
