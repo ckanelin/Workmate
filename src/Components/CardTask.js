@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
-import './App.css';
+
+// import './App.css';
 
 const FlippyStyle = {
-  width: '200px',
-  height: '300px',
+  width: '250px',
+  height: '350px',
   textAlign: 'center',
   color: '#FFF',
   fontFamily: 'sans-serif',
@@ -13,44 +14,41 @@ const FlippyStyle = {
   justifyContent: 'center'
 }
 
-
-const DefaultCardContents = ({ children }) => (
+const DefaultCardContents = ({ title, children }) => (
   <React.Fragment>
     <FrontSide
       style={{
-        backgroundColor: '#363740',
+        backgroundColor: '#41669d',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column'
       }}
     >
       <img
-      variant="top"    
-        src='https://urbaned.tcnj.edu/wp-content/uploads/sites/85/2019/10/placeholder-profile-1.png'
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
-        alt='Profile Picture'
+        variant="top"
+        src="https://image.freepik.com/free-vector/illustration-checklist-clipboard_53876-43946.jpg"
+        style={{ maxWidth: '120%', maxHeight: '180%' }}
       />
-      Profile Name
+      {title}
       <span 
         style={{
           fontSize:'12px',
-          position: 'absolute',
+          position: 'center',
           bottom: '10px',
           width: '100%'
         }}>
         {children}<br />
-      Pronouns
       </span>
     </FrontSide>
     <BackSide
       style={{
-        backgroundColor: '#363740',
+        backgroundColor: '#41669d',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column'
       }}>
-      Information about person goes here...
+      DEFAULT
       <span 
         style={{
           fontSize:'12px',
@@ -59,31 +57,18 @@ const DefaultCardContents = ({ children }) => (
           width: '100%'
         }}>
         {children}<br />
-        
       </span>
     </BackSide>
   </React.Fragment>);
 
-const FlippyOnHover = ({ flipDirection = 'vertical' }) => (
-  <Flippy
-    flipOnHover={true}
-    flipDirection={flipDirection}
-    style={FlippyStyle}
-  >
-    <DefaultCardContents>
-
-    </DefaultCardContents>
-  </Flippy>
-);
-
-const FlippyOnClick = ({ flipDirection = 'vertical' }) => (
+const FlippyOnClick = ({ title, text, flipDirection = 'vertical' }) => (
   <Flippy
     flipOnClick={true}
     flipDirection={flipDirection}
     style={FlippyStyle}
   >
-    <DefaultCardContents>
-    
+    <DefaultCardContents title={title}>
+        {text}
     </DefaultCardContents>
   </Flippy>
 );
@@ -95,7 +80,7 @@ const ControlledFlippy = ({ isFlipped })  => (
     style={FlippyStyle}
   >
     <DefaultCardContents>
-      
+      Default
     </DefaultCardContents>
   </Flippy>
 );
@@ -117,19 +102,21 @@ class CardTask extends Component {
   render() {
     return (
       <div className="App">
-        <div style={{ display: 'flex', flex: '1 0 200px', justifyContent: 'space-evenly', 'flex-wrap': 'wrap', padding: '10px 7px 10px 7px'}}>
+        <div style={{ display: 'flex', flex: '1 0 200px', justifyContent: 'space-around', 'flex-wrap': 'wrap', 
+             padding: '10px 10px'}}>
+          <FlippyOnClick title={'task 1'} text={'Hi'} flipDirection="horizontal"/>
           <FlippyOnClick flipDirection="horizontal"/>
-           <FlippyOnClick flipDirection="horizontal"/>
-           <FlippyOnClick flipDirection="horizontal"/>
+          <FlippyOnClick flipDirection="horizontal"/>
         </div>
-        <div style={{ display: 'flex', flex: '1 0 200px', justifyContent: 'space-around', 'flex-wrap': 'wrap',padding: '10px 7px 10px 7px' }}>
+        <div style={{ display: 'flex', flex: '1 0 200px', justifyContent: 'space-around', 'flex-wrap': 'wrap', 
+             padding: '10px 10px'}}>
           <FlippyOnClick flipDirection="horizontal"/>
           <FlippyOnClick flipDirection="horizontal"/>
-           <FlippyOnClick flipDirection="horizontal"/>
+          <FlippyOnClick flipDirection="horizontal"/>
         </div>
       </div>
     );
   }
 }
 
-export default MatchCard;
+export default CardTask;

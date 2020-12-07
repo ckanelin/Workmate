@@ -2,6 +2,8 @@ import { Container, Header, Content, Footer, Sidebar, Navbar, Nav, Icon, Sidenav
 import React from "react";
 import 'rsuite/dist/styles/rsuite-default.css';
 import TopBar from "./NavBar.jsx";
+import CardTask from "./CardTask";
+import MatchCard from "./MatchCard";
 
 const headerStyles = {
     padding: 18,
@@ -47,23 +49,45 @@ const headerStyles = {
       </Navbar>
     );
   };
+
+  const initialState = {
+    route: 'dashboard',
+  }
   
   class DashBoard extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        expand: true
+        expand: true,
+        route: initialState.route
       };
       this.handleToggle = this.handleToggle.bind(this);
+      this.onClickTask = this.onClickTask.bind(this);
+      this.onClickProfile = this.onClickProfile.bind(this);
+      this.onClickMatches = this.onClickMatches.bind(this);
     }
+
     handleToggle() {
       this.setState({
         expand: !this.state.expand
       });
     }
 
+    onClickTask(){
+      this.setState({route: 'tasks'})
+    }
+
+    onClickProfile(){
+      this.setState({route: 'profile'})
+    }
+
+    onClickMatches(){
+      this.setState({route: 'matches'})
+    }
+
     render() {
-      const { expand } = this.state;
+      const { expand, route } = this.state;
+
       return (
         <div className="show-fake-browser sidebar-page">
           <Container>
@@ -88,13 +112,13 @@ const headerStyles = {
                     <Nav.Item eventKey="1" active icon={<Icon icon="dashboard" />}>
                       Dashboard
                     </Nav.Item>
-                    <Nav.Item eventKey="2" icon={<Icon icon="profile" />}>
+                    <Nav.Item onClick={this.onClickProfile} eventKey="2" icon={<Icon icon="profile" />}>
                       Profile
                     </Nav.Item>
-                    <Nav.Item eventKey="3" icon={<Icon icon="tasks" />}>
+                    <Nav.Item onClick={this.onClickTask} eventKey="3" icon={<Icon icon="tasks" />}>
                       Tasks
                     </Nav.Item>
-                    <Nav.Item eventKey="4" icon={<Icon icon="peoples" />}>
+                    <Nav.Item onClick={this.onClickMatches} eventKey="4" icon={<Icon icon="peoples" />}>
                       Matches
                     </Nav.Item>
                     <Nav.Item eventKey="2" icon={<Icon icon="inbox" />}>
@@ -116,13 +140,31 @@ const headerStyles = {
               <NavToggle expand={expand} onChange={this.handleToggle} onLogOut={this.props.onLogOut} />
             </Sidebar>
   
-            <Container>
+            <Container >
               <Header>
                 <div>
                     <TopBar/>
                 </div>
               </Header>
-              <Content>Content</Content>
+              <Content >
+                {
+                  route === 'tasks' ?
+                  <CardTask/>:
+
+                  route === 'matches' ?
+                  <MatchCard/>:
+
+                  <div className="flex flex-column ">
+                    <div>
+                      <h1>Interaction Analytics</h1>
+                      <img style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        src="https://www.visme.co/wp-content/themes/visme/images/graph-maker-header-4.jpg"/>
+                      <img style={{ maxWidth: '100%', maxHeight: '100%' }}
+                      src="https://www.visme.co/wp-content/themes/visme/images/graph-maker-header-5.jpg"/>
+                    </div>
+                  </div>
+                }
+              </Content>
             </Container>
           </Container>
         </div>
