@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/workmate/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/workmate/static/js/main.2d5d7333.chunk.js",
+    "main.js.map": "/workmate/static/js/main.2d5d7333.chunk.js.map",
+    "runtime-main.js": "/workmate/static/js/runtime-main.708fa20d.js",
+    "runtime-main.js.map": "/workmate/static/js/runtime-main.708fa20d.js.map",
+    "static/css/2.2b5cadfa.chunk.css": "/workmate/static/css/2.2b5cadfa.chunk.css",
+    "static/js/2.f7144d8e.chunk.js": "/workmate/static/js/2.f7144d8e.chunk.js",
+    "static/js/2.f7144d8e.chunk.js.map": "/workmate/static/js/2.f7144d8e.chunk.js.map",
+    "static/js/3.e3f69b3e.chunk.js": "/workmate/static/js/3.e3f69b3e.chunk.js",
+    "static/js/3.e3f69b3e.chunk.js.map": "/workmate/static/js/3.e3f69b3e.chunk.js.map",
+    "index.html": "/workmate/index.html",
+    "static/css/2.2b5cadfa.chunk.css.map": "/workmate/static/css/2.2b5cadfa.chunk.css.map",
+    "static/css/main.ab7136cd.chunk.css.map": "/workmate/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.f7144d8e.chunk.js.LICENSE.txt": "/workmate/static/js/2.f7144d8e.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/workmate/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.708fa20d.js",
+    "static/css/2.2b5cadfa.chunk.css",
+    "static/js/2.f7144d8e.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.2d5d7333.chunk.js"
+  ]
+}
