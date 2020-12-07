@@ -20,7 +20,7 @@ const headerStyles = {
     textAlign: 'center'
   };
   
-  const NavToggle = ({ expand, onChange }) => {
+  const NavToggle = ({ expand, onChange, onLogOut }) => {
     return (
       <Navbar appearance="subtle" className="nav-toggle">
         <Navbar.Body>
@@ -34,7 +34,7 @@ const headerStyles = {
             >
               <Dropdown.Item>Help</Dropdown.Item>
               <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Sign out</Dropdown.Item>
+              <Dropdown.Item onClick={onLogOut}>Sign out</Dropdown.Item>
             </Dropdown>
           </Nav>
   
@@ -61,6 +61,7 @@ const headerStyles = {
         expand: !this.state.expand
       });
     }
+
     render() {
       const { expand } = this.state;
       return (
@@ -112,7 +113,7 @@ const headerStyles = {
                   </Nav>
                 </Sidenav.Body>
               </Sidenav>
-              <NavToggle expand={expand} onChange={this.handleToggle} />
+              <NavToggle expand={expand} onChange={this.handleToggle} onLogOut={this.props.onLogOut} />
             </Sidebar>
   
             <Container>

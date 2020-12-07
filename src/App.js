@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import SignIn from './Components/SignIn';
 import Register from './Components/Register';
+import DashBoard from './Components/Dashboard';
 
 const initialState = {
   route: 'signIn',
@@ -22,6 +23,10 @@ class App extends Component {
     }
   }
 
+  onLogOut = (route) => {
+    this.setState({route: 'signIn'})
+  }
+
   render(){
     const {route} = this.state;
 
@@ -30,7 +35,7 @@ class App extends Component {
         {
           route === 'home' ?
           <div>
-             Home
+             <DashBoard onLogOut={this.onLogOut}/>
           </div>:
 
           <div className="flex">
